@@ -1,16 +1,111 @@
 export default function ToolBar() {
   return (
-    <div className="flex justify-between items-center px-4 py-2 bg-white border-b w-full">
-      <div className="flex gap-4 text-sm text-gray-600">
-        <button onClick={() => console.log("Sort clicked")}>Sort</button>
-        <button onClick={() => console.log("Filter clicked")}>Filter</button>
-        <button onClick={() => console.log("Cell View clicked")}>Cell View</button>
+    <div className="flex justify-between items-center px-2 py-[6px] border-b w-full bg-white">
+      {/* Left Section */}
+      <div className="flex gap-2 text-sm text-gray-600">
+        <button
+          className="hover:text-black"
+          onClick={() => console.log("Hide Fields clicked")}
+        >
+          Hide Fields
+        </button>
+        <button
+          className="hover:text-black"
+          onClick={() => console.log("Sort clicked")}
+        >
+          Sort
+        </button>
+        <button
+          className="hover:text-black"
+          onClick={() => console.log("Filter clicked")}
+        >
+          Filter
+        </button>
+        <button
+          className="hover:text-black"
+          onClick={() => console.log("Cell View clicked")}
+        >
+          Cell View
+        </button>
       </div>
-      <div className="flex gap-4 text-sm text-gray-600">
-        <button onClick={() => console.log("Import clicked")}>Import</button>
-        <button onClick={() => console.log("Export clicked")}>Export</button>
-        <button onClick={() => console.log("Share clicked")}>Share</button>
-        <button className="bg-green-600 text-white px-3 py-1 rounded" onClick={() => console.log("New Action")}>+ New Action</button>
+
+      {/* Right Section */}
+      <div className="flex gap-2 text-sm text-gray-600">
+         <button
+  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[90px] h-[36px] border rounded-md text-gray-600 hover:bg-gray-100"
+  onClick={() => console.log("Import clicked")}
+>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15.2082 17.0833C15.5533 17.0832 15.8333 17.363 15.8333 17.7082C15.8333 18.0533 15.5537 18.3332 15.2085 18.3333L4.37518 18.3365C4.03 18.3366 3.75 18.0568 3.75 17.7117C3.75 17.3665 4.02964 17.0866 4.37482 17.0865L15.2082 17.0833ZM9.70686 1.6765L9.79167 1.67079C10.1081 1.67079 10.3696 1.90592 10.411 2.21098L10.4167 2.29579L10.4158 13.7L13.5173 10.5997C13.7393 10.3778 14.0865 10.3577 14.3311 10.5393L14.4012 10.5998C14.6231 10.8217 14.6432 11.1689 14.4617 11.4136L14.4011 11.4837L10.2364 15.6475C10.0146 15.8692 9.66766 15.8895 9.423 15.7082L9.3529 15.6478L5.18336 11.4839C4.93912 11.24 4.93885 10.8443 5.18276 10.6C5.40449 10.378 5.7517 10.3576 5.9965 10.539L6.06664 10.5994L9.16583 13.6941L9.16667 2.29579C9.16667 1.97938 9.40179 1.71788 9.70686 1.6765L9.79167 1.67079L9.70686 1.6765Z"
+      fill="#545454"
+    />
+  </svg>
+  <span>Import</span>
+</button>
+         <button
+  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[89px] h-[36px] border rounded-md text-gray-600 hover:bg-gray-100"
+  onClick={() => console.log("Export clicked")}
+>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15.2082 2.92392C15.5533 2.92402 15.8333 2.64428 15.8333 2.2991C15.8333 1.95392 15.5537 1.67402 15.2085 1.67392L4.37518 1.67078C4.03 1.67068 3.75 1.95043 3.75 2.2956C3.75 2.64078 4.02964 2.92068 4.37482 2.92078L15.2082 2.92392ZM9.70686 18.3308L9.79167 18.3365C10.1081 18.3365 10.3696 18.1013 10.411 17.7963L10.4167 17.7115L10.4158 6.3073L13.5173 9.40757C13.7393 9.62944 14.0865 9.64958 14.3311 9.46801L14.4012 9.40748C14.6231 9.18557 14.6432 8.83835 14.4617 8.59369L14.4011 8.5236L10.2364 4.35975C10.0146 4.13801 9.66766 4.11776 9.423 4.29906L9.3529 4.3595L5.18336 8.52334C4.93912 8.76725 4.93885 9.16298 5.18276 9.40723C5.40449 9.62927 5.7517 9.64968 5.9965 9.4683L6.06664 9.40783L9.16583 6.31313L9.16667 17.7115C9.16667 18.0279 9.40179 18.2894 9.70686 18.3308Z"
+      fill="#545454"
+    />
+  </svg>
+  <span>Export</span>
+</button>
+         <button
+  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[84px] h-[36px] border rounded-md text-gray-600 hover:bg-gray-100"
+  onClick={() => console.log('Share clicked')}
+>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.62231 3.33333H8.50915C8.85433 3.33333 9.13415 3.61316 9.13415 3.95833C9.13415 4.27475 8.89902 4.53624 8.59396 4.57763L8.50915 4.58333H5.62231C4.62993 4.58333 3.81761 5.3543 3.75164 6.32996L3.74731 6.45833V14.375C3.74731 15.3674 4.51828 16.1797 5.49394 16.2457L5.62231 16.25H13.5396C14.532 16.25 15.3443 15.479 15.4103 14.5034L15.4146 14.375V13.9602C15.4146 13.615 15.6944 13.3352 16.0396 13.3352C16.356 13.3352 16.6175 13.5703 16.6589 13.8754L16.6646 13.9602V14.375C16.6646 16.0452 15.3543 17.4094 13.7056 17.4957L13.5396 17.5H5.62231C3.9521 17.5 2.58792 16.1897 2.50165 14.541L2.49731 14.375V6.45833C2.49731 4.78812 3.80762 3.42394 5.45635 3.33767L5.62231 3.33333H8.50915H5.62231ZM12.084 5.43321V3.125C12.084 2.60503 12.673 2.32496 13.0731 2.6165L13.1416 2.67395L18.1371 7.46562C18.3703 7.68924 18.3915 8.04843 18.2008 8.29673L18.1372 8.36765L13.1417 13.1609C12.7665 13.5209 12.1565 13.2897 12.0899 12.7991L12.084 12.7099V10.4388L11.7977 10.4639C9.79799 10.6725 7.88129 11.5732 6.0356 13.1811C5.60301 13.558 4.93374 13.2017 5.00488 12.6324C5.55888 8.19942 7.8771 5.75608 11.8345 5.44959L12.084 5.43321V3.125V5.43321ZM13.334 4.59054V6.04167C13.334 6.38685 13.0542 6.66667 12.709 6.66667C9.48114 6.66667 7.48062 8.06344 6.61625 10.9643L6.55037 11.1965L6.84386 10.9991C8.7076 9.781 10.6654 9.16667 12.709 9.16667C13.0254 9.16667 13.2869 9.4018 13.3283 9.70686L13.334 9.79167V11.244L16.8017 7.91674L13.334 4.59054Z"
+      fill="#545454"
+    />
+  </svg>
+  <span>Share</span>
+</button>
+
+
+        <button
+  className="flex flex-row justify-center items-center px-6 py-2 gap-1 w-[150px] h-[36px] bg-[#4B6A4F] rounded-md hover:bg-[#3e5a42] text-white"
+  onClick={() => console.log("New Action clicked")}
+>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.0001 2.5C10.3452 2.5 10.6251 2.77982 10.6251 3.125V7.91667H12.7046C13.9702 7.91667 14.9963 8.94268 14.9963 10.2083V15.368L16.4334 13.9328C16.6777 13.6888 17.0734 13.6891 17.3173 13.9334C17.5612 14.1776 17.5609 14.5733 17.3167 14.8172L14.8129 17.3177C14.5688 17.5615 14.1733 17.5613 13.9293 17.3174L11.4289 14.8169C11.1848 14.5729 11.1848 14.1771 11.4289 13.9331C11.673 13.689 12.0687 13.689 12.3128 13.9331L13.7463 15.3665V10.2083C13.7463 9.63304 13.2799 9.16667 12.7046 9.16667H7.29165C6.71635 9.16667 6.24998 9.63304 6.24998 10.2083V15.3665L7.68346 13.9331C7.92754 13.689 8.32327 13.689 8.56734 13.9331C8.81142 14.1771 8.81142 14.5729 8.56734 14.8169L6.06692 17.3174C5.82285 17.5614 5.42712 17.5614 5.18304 17.3174L2.68257 14.8169C2.43849 14.5729 2.43849 14.1771 2.68257 13.9331C2.92664 13.689 3.32237 13.689 3.56645 13.9331L4.99998 15.3666V10.2083C4.99998 8.94268 6.026 7.91667 7.29165 7.91667H9.37506V3.125C9.37506 2.77982 9.65488 2.5 10.0001 2.5Z"
+      fill="white"
+    />
+  </svg>
+  <span>New Action</span>
+</button>
+
       </div>
     </div>
   );
