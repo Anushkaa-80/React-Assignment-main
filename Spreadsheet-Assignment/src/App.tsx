@@ -1,35 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ToolBar from "./components/layout/ToolBar";
+import TopBar from "./components/layout/TopBar";
+import SpreadsheetTable from "./components/table/SpreadsheetTable";
+import BottomTabs from "./components/layout/BottomTabs";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="w-screen h-screen overflow-hidden flex flex-col bg-white">
+      <TopBar />
+      <ToolBar />
+      <div className="flex-1 overflow-auto px-4">
+        <SpreadsheetTable />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <BottomTabs />
+    </div>
+  );
 }
 
-export default App
+export default App;
