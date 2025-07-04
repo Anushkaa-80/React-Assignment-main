@@ -48,7 +48,9 @@ export default function SpreadsheetTable() {
               <div className="w-[124px] h-[36px] px-2 py-2"></div>
             </th>
 
-            <th colSpan={1} className="bg-[#D9EAD3] text-center px-4 py-2 text-gray-700 font-medium">ABC</th>
+            <th colSpan={1} className="bg-[#D9EAD3] text-center px-4 py-2 text-gray-700 font-medium">
+                
+                ABC</th>
             <th colSpan={2} className="bg-[#D9D2E9] text-center px-4 py-2 text-gray-700 font-medium">Answer a question</th>
             <th colSpan={1} className="bg-[#F4CCCC] text-center px-4 py-2 text-gray-700 font-medium">Extract</th>
             <th className="w-[40px] px-2 text-center cursor-pointer">
