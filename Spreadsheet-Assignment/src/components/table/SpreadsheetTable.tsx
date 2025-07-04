@@ -82,6 +82,10 @@ export default function SpreadsheetTable() {
 </svg>
 
                 Extract
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.16671 8C5.16671 8.64433 4.64437 9.16667 4.00004 9.16667C3.35571 9.16667 2.83337 8.64433 2.83337 8C2.83337 7.35567 3.35571 6.83334 4.00004 6.83334C4.64437 6.83334 5.16671 7.35567 5.16671 8ZM9.16671 8C9.16671 8.64433 8.64437 9.16667 8.00004 9.16667C7.35571 9.16667 6.83337 8.64433 6.83337 8C6.83337 7.35567 7.35571 6.83334 8.00004 6.83334C8.64437 6.83334 9.16671 7.35567 9.16671 8ZM12 9.16667C12.6444 9.16667 13.1667 8.64433 13.1667 8C13.1667 7.35567 12.6444 6.83334 12 6.83334C11.3557 6.83334 10.8334 7.35567 10.8334 8C10.8334 8.64433 11.3557 9.16667 12 9.16667Z" fill="#AFAFAF"/>
+</svg>
+
                 
                 </div>
                 </th>
@@ -95,25 +99,38 @@ export default function SpreadsheetTable() {
           </tr>
 
           {/* Column Header Row */}
-          <tr className="bg-[#EEEEEE]">
-            {[
-              "#", 
-              
-              
-              "Job Request", "Submitted", "Status", "Submitter",
-              "URL", "Assigned", "Priority", "Due Date", "Est. Value", ""
-            ].map((col, index) => (
-              <th key={index} className={`px-4 py-2 text-left text-gray-700 ${col === "#" ? "w-[32px] text-center text-gray-500" : ""}`}>
-                <div className="flex items-center">
-                  {col}
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.14645 8.14645C6.34171 7.95118 6.65829 7.95118 6.85355 8.14645L10 11.2929L13.1464 8.14645C13.3417 7.95118 13.6583 7.95118 13.8536 8.14645C14.0488 8.34171 14.0488 8.65829 13.8536 8.85355L10.3536 12.3536C10.1583 12.5488 9.84171 12.5488 9.64645 12.3536L6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645Z" fill="#AFAFAF"/>
-</svg>
+<tr className="bg-[#EEEEEE]">
+  {[
+    "#", "Job Request", "Submitted", "Status", "Submitter",
+    "URL", "Assigned", "Priority", "Due Date", "Est. Value", ""
+  ].map((col, index) => (
+    <th
+      key={index}
+      className={`px-4 py-2 text-left text-gray-700 border border-gray-300 transition-colors duration-200
+        ${col !== "#" && col !== "" ? "hover:bg-gray-100 cursor-pointer" : ""}
+        ${col === "#" ? "w-[32px] text-center text-gray-500" : ""}
+      `}
+    >
+      <div className="flex items-center justify-between">
+        {col}
+        {col !== "#" && col !== "" && (
+          <svg
+            width="12"
+            height="12"
+            fill="currentColor"
+            className="ml-1 opacity-50"
+            viewBox="0 0 12 12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M2.14645 4.14645C2.34171 3.95118 2.65829 3.95118 2.85355 4.14645L6 7.29289L9.14645 4.14645C9.34171 3.95118 9.65829 3.95118 9.85355 4.14645C10.0488 4.34171 10.0488 4.65829 9.85355 4.85355L6.35355 8.35355C6.15829 8.54882 5.84171 8.54882 5.64645 8.35355L2.14645 4.85355C1.95118 4.65829 1.95118 4.34171 2.14645 4.14645Z" fill="#AFAFAF"/>
+          </svg>
+        )}
+      </div>
+    </th>
+  ))}
+</tr>
 
-                </div>
-              </th>
-            ))}
-          </tr>
+
         </thead>
 
         <tbody>
