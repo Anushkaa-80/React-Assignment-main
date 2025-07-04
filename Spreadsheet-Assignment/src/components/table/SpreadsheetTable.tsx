@@ -15,7 +15,7 @@ export default function SpreadsheetTable() {
 
             <th colSpan={4} className="bg-[#E2E2E2] text-left text-gray-700 font-medium">
               <div className="flex items-center gap-2 px-2 py-1">
-                <button className="flex items-center gap-1 bg-white px-2 py-[2px] rounded text-sm">
+                <button className="flex items-center gap-1 bg-gray-100 px-2 py-[2px] rounded text-sm">
                   <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
                     <path
                       d="M6.66667 9.33333C6.31333 9.68 6.16 10.0933 6.16 10.58C6.16 11.0667 6.31333 11.4733 6.66667 11.8C7.02 12.1467 7.44 12.32 7.92667 12.32C8.41333 12.32 8.82 12.1467 9.14667 11.8L11.6867 9.26C12.02 8.92667 12.1867 8.52 12.1867 8.04C12.1867 7.56 12.02 7.15333 11.6867 6.82C11.3533 6.48667 10.9467 6.32 10.4667 6.32C9.98667 6.32 9.58 6.48667 9.24667 6.82L8.94 7.12667"
@@ -113,6 +113,7 @@ export default function SpreadsheetTable() {
     >
       <div className="flex items-center justify-between">
         {col}
+        
         {col !== "#" && col !== "" && (
           <svg
             width="12"
@@ -124,7 +125,10 @@ export default function SpreadsheetTable() {
           >
             <path d="M2.14645 4.14645C2.34171 3.95118 2.65829 3.95118 2.85355 4.14645L6 7.29289L9.14645 4.14645C9.34171 3.95118 9.65829 3.95118 9.85355 4.14645C10.0488 4.34171 10.0488 4.65829 9.85355 4.85355L6.35355 8.35355C6.15829 8.54882 5.84171 8.54882 5.64645 8.35355L2.14645 4.85355C1.95118 4.65829 1.95118 4.34171 2.14645 4.14645Z" fill="#AFAFAF"/>
           </svg>
+
+          
         )}
+        
       </div>
     </th>
   ))}
@@ -149,7 +153,7 @@ export default function SpreadsheetTable() {
     <td className="px-4 py-1">{row.submitter}</td>
     <td className="px-4 py-1">{row.url}</td>
     <td className="px-4 py-1">{row.assigned}</td>
-    <td className="px-4 py-1">
+    <td className="px-4 py-1  ">
       <PriorityBadge priority={row.priority} />
     </td>
     <td className="px-4 py-1">{row.due}</td>
