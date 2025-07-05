@@ -68,7 +68,7 @@ export default function TopBar() {
         {/* User Info */}
         <div className="flex items-center gap-2">
          <img
-            src="D:\React-Assignment-main\Spreadsheet-Assignment\src\assets\user.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmosLNK6eZsFlzbb51QtgxOXgHBW0SsLFUqQ&s"
             alt="John Doe"
             className="w-8 h-8 rounded-full border border-gray-300"
           />
