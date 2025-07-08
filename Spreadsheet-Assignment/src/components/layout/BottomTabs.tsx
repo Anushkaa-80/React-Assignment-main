@@ -6,7 +6,7 @@ export default function BottomTabs() {
   const [activeTab, setActiveTab] = useState("All Orders");
 
    return (
-    <div className="w-full bg-white border-t">
+    <div className="w-full bg-white border-t border-gray-300">
       <div className="flex space-x-4 px-4 pt-2">
         {tabs.map((tab) => {
           const isActive = activeTab === tab;

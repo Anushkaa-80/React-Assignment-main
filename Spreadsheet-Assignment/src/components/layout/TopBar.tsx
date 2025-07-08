@@ -1,6 +1,6 @@
 export default function TopBar() {
   return (
-    <div className="w-full h-14 px-4 py-2 border-b flex justify-between items-center bg-white shadow-sm">
+    <div className="w-full h-14 px-4 py-2 border-b border-gray-300 flex justify-between items-center bg-white shadow-sm">
       {/* Left: Path with SVG Icon */}
       <div className="flex items-center gap-2 text-sm text-gray-700">
         <svg

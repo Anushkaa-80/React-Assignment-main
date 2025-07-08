@@ -1,6 +1,6 @@
 export default function ToolBar() {
   return (
-    <div className="flex justify-between items-center px-2 py-[6px] border-b w-full bg-white">
+    <div className="flex justify-between items-center px-2 py-[6px] border-b border-gray-300 w-full bg-white">
       {/* Left Section */}
       <div className="flex gap-2 text-sm text-gray-600">
         
@@ -71,7 +71,7 @@ export default function ToolBar() {
       {/* Right Section */}
       <div className="flex gap-2 text-sm text-gray-600">
          <button
-  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[90px] h-[36px] border rounded-md text-gray-600 hover:bg-gray-100"
+  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[90px] h-[36px] border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100"
   onClick={() => console.log("Import clicked")}
 >
   <svg
@@ -89,7 +89,7 @@ export default function ToolBar() {
   <span>Import</span>
 </button>
          <button
-  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[89px] h-[36px] border rounded-md text-gray-600 hover:bg-gray-100"
+  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[89px] h-[36px] border border-gray-300  rounded-md text-gray-600 hover:bg-gray-100"
   onClick={() => console.log("Export clicked")}
 >
   <svg
@@ -107,7 +107,7 @@ export default function ToolBar() {
   <span>Export</span>
 </button>
          <button
-  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[84px] h-[36px] border rounded-md text-gray-600 hover:bg-gray-100"
+  className="flex flex-row justify-center items-center pt-2 pr-3 pb-2 pl-2 gap-1 w-[84px] h-[36px] border border-gray-300  rounded-md text-gray-600 hover:bg-gray-100"
   onClick={() => console.log('Share clicked')}
 >
   <svg
