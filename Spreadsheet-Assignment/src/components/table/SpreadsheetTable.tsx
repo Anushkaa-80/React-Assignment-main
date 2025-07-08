@@ -1,6 +1,15 @@
 import { tableData } from "../../data/tableData";
 import StatusBadge from "./StatusBadge";
 import PriorityBadge from "./PriorityBadge";
+import {
+  JobIcon,
+  CalendarIcon,
+  StatusIcon,
+  UserIcon,
+  LinkIcon,
+  UserCheckIcon,
+} from "./Icons";
+
 
 export default function SpreadsheetTable() {
   const TOTAL_ROWS = 25;
@@ -16,31 +25,17 @@ export default function SpreadsheetTable() {
             <th colSpan={4} className="bg-[#E2E2E2] text-left text-gray-700 font-medium">
               <div className="flex items-center gap-2 px-2 py-1">
                 <button className="flex items-center gap-1 bg-gray-100 px-2 py-[2px] rounded text-sm">
-                  <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                    <path
-                      d="M6.66667 9.33333C6.31333 9.68 6.16 10.0933 6.16 10.58C6.16 11.0667 6.31333 11.4733 6.66667 11.8C7.02 12.1467 7.44 12.32 7.92667 12.32C8.41333 12.32 8.82 12.1467 9.14667 11.8L11.6867 9.26C12.02 8.92667 12.1867 8.52 12.1867 8.04C12.1867 7.56 12.02 7.15333 11.6867 6.82C11.3533 6.48667 10.9467 6.32 10.4667 6.32C9.98667 6.32 9.58 6.48667 9.24667 6.82L8.94 7.12667"
-                      stroke="#4B6A4F"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9.33333 6.66667C9.68667 6.32 9.84 5.90667 9.84 5.42C9.84 4.93333 9.68667 4.52667 9.33333 4.2C8.98 3.85333 8.56 3.68 8.07333 3.68C7.58667 3.68 7.18 3.85333 6.85333 4.2L4.31333 6.74C3.98 7.07333 3.81333 7.48 3.81333 7.96C3.81333 8.44 3.98 8.84667 4.31333 9.18C4.64667 9.51333 5.05333 9.68 5.53333 9.68C6.01333 9.68 6.42 9.51333 6.75333 9.18L7.06 8.87333"
-                      stroke="#4B6A4F"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.16667 4.66666C6.44281 4.66666 6.66667 4.89052 6.66667 5.16666C6.66667 5.4177 6.48166 5.62553 6.24055 5.66124L6.16667 5.66666H4.66667C3.378 5.66666 2.33333 6.71133 2.33333 8C2.33333 9.24264 3.30471 10.2584 4.52956 10.3294L4.66667 10.3333H6.16667C6.44281 10.3333 6.66667 10.5572 6.66667 10.8333C6.66667 11.0844 6.48166 11.2922 6.24055 11.3279L6.16667 11.3333H4.66667C2.82572 11.3333 1.33333 9.84095 1.33333 8C1.33333 6.21483 2.73664 4.75743 4.5003 4.67074L4.66667 4.66666H6.16667ZM11.3333 4.66666C13.1743 4.66666 14.6667 6.15905 14.6667 8C14.6667 9.78516 13.2634 11.2426 11.4997 11.3293L11.3333 11.3333H9.83333C9.55719 11.3333 9.33333 11.1095 9.33333 10.8333C9.33333 10.5823 9.51834 10.3745 9.75945 10.3388L9.83333 10.3333H11.3333C12.622 10.3333 13.6667 9.28866 13.6667 8C13.6667 6.75736 12.6953 5.74159 11.4704 5.67062L11.3333 5.66666H9.83333C9.55719 5.66666 9.33333 5.44281 9.33333 5.16666C9.33333 4.91563 9.51834 4.7078 9.75945 4.67209L9.83333 4.66666H11.3333ZM4.66667 7.5H11.3333C11.6095 7.5 11.8333 7.72385 11.8333 8C11.8333 8.25313 11.6452 8.46232 11.4012 8.49543L11.3333 8.5H4.66667C4.39052 8.5 4.16667 8.27614 4.16667 8C4.16667 7.74687 4.35477 7.53767 4.59882 7.50456L4.66667 7.5H11.3333H4.66667Z" fill="#1A8CFF"/>
+</svg>
+
                   <span>Q3 Financial Overview</span>
                 </button>
 
-                <svg width="14" height="14" fill="none" viewBox="0 0 14 14" className="text-orange-500 cursor-pointer">
-                  <path
-                    d="M7 1.17C3.78 1.17 1.17 3.78 1.17 7s2.61 5.83 5.83 5.83c2.12 0 3.99-1.23 5.01-3.08.14-.25.04-.57-.22-.71-.25-.14-.57-.04-.71.22A4.84 4.84 0 017 11.67c-2.58 0-4.67-2.09-4.67-4.67S4.42 2.33 7 2.33c.91 0 1.77.27 2.49.77l-.74.74c-.21.21-.21.55 0 .76.21.21.55.21.76 0l1.7-1.7c.21-.21.21-.55 0-.76L9.51.44a.54.54 0 00-.76 0c-.21.21-.21.55 0 .76L9.65 2.12c-.91-.61-1.93-.95-2.65-.95z"
-                    fill="#F97316"
-                  />
-                </svg>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.8337 3.45341C10.6663 3.67298 10.7085 3.98673 10.9281 4.15419C12.1203 5.06343 12.8333 6.47214 12.8333 8C12.8333 10.4907 10.9494 12.5413 8.52888 12.8047L8.97978 12.3536C9.17505 12.1583 9.17505 11.8417 8.97978 11.6464C8.80227 11.4689 8.5245 11.4528 8.32876 11.598L8.27268 11.6464L6.93934 12.9798C6.76183 13.1573 6.7457 13.4351 6.89093 13.6308L6.93934 13.6869L8.27268 15.0202C8.46794 15.2155 8.78452 15.2155 8.97978 15.0202C9.1573 14.8427 9.17343 14.5649 9.0282 14.3692L8.97978 14.3131L8.47963 13.8139C11.4769 13.57 13.8333 11.0602 13.8333 8C13.8333 6.15685 12.9721 4.45548 11.5345 3.35905C11.3149 3.19159 11.0012 3.23384 10.8337 3.45341ZM7.02022 0.979782C6.82496 1.17504 6.82496 1.49163 7.02022 1.68689L7.51972 2.18616C4.52273 2.4304 2.16667 4.94006 2.16667 8C2.16667 9.76297 2.95418 11.3983 4.28721 12.4994C4.50011 12.6753 4.81527 12.6452 4.99113 12.4323C5.16699 12.2194 5.13697 11.9043 4.92407 11.7284C3.81863 10.8153 3.16667 9.46147 3.16667 8C3.16667 5.50958 5.05022 3.45908 7.47047 3.19535L7.02022 3.64645C6.82496 3.84171 6.82496 4.15829 7.02022 4.35356C7.21549 4.54882 7.53207 4.54882 7.72733 4.35356L9.06066 3.02022C9.25593 2.82496 9.25593 2.50838 9.06066 2.31312L7.72733 0.979782C7.53207 0.78452 7.21549 0.78452 7.02022 0.979782Z" fill="#FA6736"/>
+</svg>
+
               </div>
             </th>
 
@@ -102,44 +97,53 @@ export default function SpreadsheetTable() {
           {/* Column Header Row */}
 <tr className="bg-[#EEEEEE] work-sans font-semibold text-[12px] leading-[16px] tracking-[0]">
   {[
-    "#", "Job Request", "Submitted", "Status", "Submitter",
-    "URL", "Assigned", "Priority", "Due Date", "Est. Value", ""
+    { label: "#", svg: null },
+    { label: "Job Request", svg: <JobIcon /> },
+    { label: "Submitted", svg: <CalendarIcon /> },
+    { label: "Status", svg: <StatusIcon /> },
+    { label: "Submitter", svg: <UserIcon /> },
+    { label: "URL", svg: <LinkIcon /> },
+    { label: "Assigned", svg: <UserCheckIcon /> },
+    { label: "Priority" },
+    { label: "Due Date" },
+    { label: "Est. Value", },
+    { label: "", svg: null }
   ].map((col, index) => (
     <th
       key={index}
       className={`px-4 py-2 text-left text-[#757575] border border-gray-300 transition-colors duration-200
-        ${col !== "#" && col !== "" ? "hover:bg-gray-100 cursor-pointer" : ""}
-        ${col === "#" ? "w-[32px] text-center text-gray-500" : ""}
-        ${col ==="Priority" ? "bg-[#EAE3FC]":""}
-        ${col ==="Due Date" ? "bg-[#EAE3FC]":""}
-        ${col ==="Est. Value" ? "bg-[#FFE9E0]":""}
-           
-
-        
+        ${col.label !== "#" && col.label !== "" ? "hover:bg-gray-100 cursor-pointer" : ""}
+        ${col.label === "#" ? "w-[32px] text-center text-gray-500" : ""}
+        ${col.label === "Priority" ? "bg-[#EAE3FC]" : ""}
+        ${col.label === "Due Date" ? "bg-[#EAE3FC]" : ""}
+        ${col.label === "Est. Value" ? "bg-[#FFE9E0]" : ""}
       `}
     >
-      <div className="flex items-center justify-between">
-        {col}
-        
-        {col !== "#" && col !== "" && (
+      <div className="flex items-center justify-between gap-1">
+        {/* Left side: Icon + Label */}
+        <div className="flex items-center gap-2">
+          {col.svg}
+          {col.label}
+        </div>
+
+        {/* Right side: Sort Arrow */}
+        {col.label !== "#" && col.label !== "" && (
           <svg
             width="12"
             height="12"
             fill="currentColor"
-            className="ml-1 opacity-50"
+            className="opacity-50"
             viewBox="0 0 12 12"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M2.14645 4.14645C2.34171 3.95118 2.65829 3.95118 2.85355 4.14645L6 7.29289L9.14645 4.14645C9.34171 3.95118 9.65829 3.95118 9.85355 4.14645C10.0488 4.34171 10.0488 4.65829 9.85355 4.85355L6.35355 8.35355C6.15829 8.54882 5.84171 8.54882 5.64645 8.35355L2.14645 4.85355C1.95118 4.65829 1.95118 4.34171 2.14645 4.14645Z" fill="#AFAFAF"/>
           </svg>
-
-          
         )}
-        
       </div>
     </th>
   ))}
 </tr>
+
 
 
         </thead>
@@ -174,10 +178,10 @@ export default function SpreadsheetTable() {
           {Array.from({ length: TOTAL_ROWS - tableData.length }).map((_, i) => {
             const sno = tableData.length + i + 1;
             return (
-              <tr key={`empty-${sno}`} className="hover:bg-gray-50">
+              <tr key={`empty-${sno}`} className="hover:bg-gray-100">
                 <td className="text-center px-2 py-1 text-gray-400">{sno}</td>
                 {Array.from({ length: 10 }).map((_, cellIdx) => (
-                  <td key={cellIdx} className="px-4 py-1 text-gray-300">—</td>
+                  <td key={cellIdx} className="px-4 py-1 text-gray-300"></td>
                 ))}
               </tr>
             );
