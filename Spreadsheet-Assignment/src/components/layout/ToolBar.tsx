@@ -7,7 +7,7 @@ export default function ToolBar() {
   
 
 <button
-  className="flex items-center justify-center gap-1 w-[91px] h-[36px] px-2 py-2 rounded hover:bg-gray-100 text-sm text-gray-600"
+  className="flex items-center justify-center gap-1 w-[91px] h-[36px] px-2 py-2 rounded hover:bg-gray-100 hover:text-black text-sm text-gray-600"
   onClick={() => console.log("Tool Bar clicked")}
 >
   <span className="leading-none">Tool Bar</span>
@@ -26,7 +26,7 @@ export default function ToolBar() {
     
         
         <button
-          className="  hover:text-black flex items-center justify-center gap-1 w-[118px] h-[36px] px-3 py-2 rounded-md"
+          className="  hover:text-black hover:bg-gray-100 flex items-center justify-center gap-1 w-[118px] h-[36px] px-3 py-2 rounded-md"
           onClick={() => console.log("Hide Fields clicked")}
         >
              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ export default function ToolBar() {
           Hide Fields
         </button>
         <button
-  className=" hover:text-black flex items-center justify-center gap-1 w-[73px] h-[36px] px-3 py-2 rounded-md"
+  className=" hover:text-black hover:bg-gray-100 flex items-center justify-center gap-1 w-[73px] h-[36px] px-3 py-2 rounded-md"
   onClick={() => console.log("Sort clicked")}
 >
     <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ export default function ToolBar() {
 </button>
 
         <button
-          className="hover:text-black flex items-center justify-center gap-1 w-[80px] h-[36px] px-3 py-2 rounded-md"
+          className="hover:bg-gray-100 hover:text-black flex items-center justify-center gap-1 w-[80px] h-[36px] px-3 py-2 rounded-md"
           onClick={() => console.log("Filter clicked")}
         >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@ export default function ToolBar() {
           Filter
         </button>
         <button
-          className="hover:text-black flex items-center justify-center gap-1 w-[105px] h-[36px] px-3 py-2 rounded-md"
+          className="hover:text-black  hover:bg-gray-100 flex items-center justify-center gap-1 w-[105px] h-[36px] px-3 py-2 rounded-md"
           onClick={() => console.log("Cell View clicked")}
         >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
