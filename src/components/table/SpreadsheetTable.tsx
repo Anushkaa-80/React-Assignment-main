@@ -11,8 +11,45 @@ import {
 } from "./Icons";
 
 
+
+
+
 export default function SpreadsheetTable() {
   const TOTAL_ROWS = 25;
+
+function handleKeyDown(e: React.KeyboardEvent<HTMLTableCellElement>) {
+  const cell = e.currentTarget;
+  const cellIndex = Array.from(cell.parentElement?.children || []).indexOf(cell);
+  const row = cell.parentElement as HTMLTableRowElement | null;
+
+  if (!row) return;
+
+  let target: HTMLElement | null = null;
+
+  switch (e.key) {
+    case "ArrowRight":
+      target = row.children[cellIndex + 1] as HTMLElement;
+      break;
+    case "ArrowLeft":
+      target = row.children[cellIndex - 1] as HTMLElement;
+      break;
+    case "ArrowDown": {
+      const nextRow = row.nextElementSibling as HTMLTableRowElement;
+      if (nextRow) target = nextRow.children[cellIndex] as HTMLElement;
+      break;
+    }
+    case "ArrowUp": {
+      const prevRow = row.previousElementSibling as HTMLTableRowElement;
+      if (prevRow) target = prevRow.children[cellIndex] as HTMLElement;
+      break;
+    }
+  }
+
+  if (target && target.hasAttribute("tabIndex")) {
+    e.preventDefault();
+    target.focus();
+  }
+}
 
   return (
     <div className="overflow-x-auto w-full">
@@ -156,19 +193,70 @@ export default function SpreadsheetTable() {
     className="hover:bg-gray-50 text-[12px] leading-[16px] font-normal tracking-normal"
   >
     <td className="text-center px-2 py-1">{idx + 1}</td>
-    <td className="px-4 py-1">{row.job}</td>
-    <td className="px-4 py-1">{row.date}</td>
-    <td className="px-4 py-1">
-      <StatusBadge status={row.status} />
-    </td>
-    <td className="px-4 py-1">{row.submitter}</td>
-    <td className="px-4 py-1">{row.url}</td>
-    <td className="px-4 py-1">{row.assigned}</td>
-    <td className="px-4 py-1  ">
-      <PriorityBadge priority={row.priority} />
-    </td>
-    <td className="px-4 py-1">{row.due}</td>
-    <td className="px-4 py-1">{row.value}</td>
+ <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.job}
+</td>
+    <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.date}
+</td>
+   <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  <StatusBadge status={row.status} />
+</td>
+   <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.submitter}
+</td>
+   <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.url}
+</td>
+<td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.assigned}
+</td>
+    
+    <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  <PriorityBadge priority={row.priority} />
+</td>
+    <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.due}
+</td>
+    <td
+  tabIndex={0}
+  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
+  onKeyDown={handleKeyDown}
+>
+  {row.value}
+</td>
     <td className="px-4 py-1"></td>
   </tr>
 ))}
