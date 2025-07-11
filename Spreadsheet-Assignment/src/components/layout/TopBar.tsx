@@ -35,7 +35,7 @@ export default function TopBar() {
           <input
             type="text"
             placeholder="Search within sheet"
-            className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="pl-8 pr-3 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
           <svg
             className="absolute left-2 top-1.5 text-gray-400"
