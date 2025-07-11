@@ -1,3 +1,4 @@
+import { useEffect } from "react"; 
 import { tableData } from "../../data/tableData";
 import StatusBadge from "./StatusBadge";
 import PriorityBadge from "./PriorityBadge";
@@ -10,12 +11,6 @@ import {
   UserCheckIcon,
 } from "./Icons";
 
-
-
-
-
-export default function SpreadsheetTable() {
-  const TOTAL_ROWS = 25;
 
 function handleKeyDown(e: React.KeyboardEvent<HTMLTableCellElement>) {
   const cell = e.currentTarget;
@@ -45,11 +40,33 @@ function handleKeyDown(e: React.KeyboardEvent<HTMLTableCellElement>) {
     }
   }
 
-  if (target && target.hasAttribute("tabIndex")) {
+  if (target && target.hasAttribute("tabindex")) {
     e.preventDefault();
     target.focus();
   }
 }
+
+
+
+
+export default function SpreadsheetTable() {
+  const TOTAL_ROWS = 25;
+  useEffect(() => {
+  const firstCell = document.querySelector("td[tabindex]") as HTMLElement;
+  firstCell?.focus();
+}, []);
+   const renderCell = (content: React.ReactNode) => (
+  <td
+    tabIndex={0}
+    onClick={(e) => (e.currentTarget as HTMLElement).focus()}
+    onKeyDown={handleKeyDown}
+    className="px-4 py-1 cursor-pointer focus:outline-2 focus:outline-blue-400 transition-colors duration-150"
+  >
+    {content}
+  </td>
+);
+
+
 
   return (
     <div className="overflow-x-auto w-full">
@@ -185,96 +202,48 @@ function handleKeyDown(e: React.KeyboardEvent<HTMLTableCellElement>) {
 
         </thead>
 
-        <tbody>
-          {/* Actual filled data rows */}
+         <tbody>
+          {/* ✅ Filled Rows */}
           {tableData.map((row, idx) => (
-  <tr
-    key={idx}
-    className="hover:bg-gray-50 text-[12px] leading-[16px] font-normal tracking-normal"
-  >
-    <td className="text-center px-2 py-1">{idx + 1}</td>
- <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.job}
-</td>
-    <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.date}
-</td>
-   <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  <StatusBadge status={row.status} />
-</td>
-   <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.submitter}
-</td>
-   <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.url}
-</td>
-<td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.assigned}
-</td>
-    
-    <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  <PriorityBadge priority={row.priority} />
-</td>
-    <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.due}
-</td>
-    <td
-  tabIndex={0}
-  className="px-4 py-1 outline-none focus:ring-2 focus:ring-blue-300"
-  onKeyDown={handleKeyDown}
->
-  {row.value}
-</td>
-    <td className="px-4 py-1"></td>
-  </tr>
-))}
+            <tr
+              key={idx}
+              className="hover:bg-gray-50 text-[12px] leading-[16px] font-normal tracking-normal"
+            >
+              <td className="text-center px-2 py-1">{idx + 1}</td>
+              {renderCell(row.job)}
+              {renderCell(row.date)}
+              {renderCell(<StatusBadge status={row.status} />)}
+              {renderCell(row.submitter)}
+              {renderCell(row.url)}
+              {renderCell(row.assigned)}
+              {renderCell(<PriorityBadge priority={row.priority} />)}
+              {renderCell(row.due)}
+              {renderCell(row.value)}
+              <td className="px-4 py-1"></td>
+            </tr>
+          ))}
 
-
-          {/* Empty rows */}
+          {/* ✅ Empty Rows */}
           {Array.from({ length: TOTAL_ROWS - tableData.length }).map((_, i) => {
             const sno = tableData.length + i + 1;
             return (
               <tr key={`empty-${sno}`} className="hover:bg-gray-100">
                 <td className="text-center px-2 py-1 text-gray-400">{sno}</td>
                 {Array.from({ length: 10 }).map((_, cellIdx) => (
-                  <td key={cellIdx} className="px-4 py-1 text-gray-300"></td>
+                  <td
+                    key={cellIdx}
+                    tabIndex={0}
+                    onClick={(e) => (e.currentTarget as HTMLElement).focus()}
+                    onKeyDown={handleKeyDown}
+                    className="px-4 py-1 text-gray-300 outline-none focus:ring-2 focus:ring-blue-300 cursor-pointer"
+                  ></td>
                 ))}
+                <td className="px-4 py-1"></td>
               </tr>
             );
           })}
         </tbody>
+ 
       </table>
     </div>
   );
