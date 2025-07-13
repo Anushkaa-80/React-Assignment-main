@@ -238,7 +238,7 @@ export default function SpreadsheetTable() {
                     className="px-4 py-1 text-gray-300 outline-none focus:ring-2 focus:ring-blue-300 cursor-pointer"
                   ></td>
                 ))}
-                <td className="px-4 py-1"></td>
+                {/* <td className="px-4 py-1"></td> */}
               </tr>
             );
           })}
